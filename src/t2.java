@@ -2,11 +2,11 @@ import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import javax.swing.*;
 
-public class WORKINGWITHLAYOUTSBORDERLAYOUTSTask2 {
+public class t2 {
 
     JFrame frame = new JFrame("BorderLayout Demo");
 
-    public WORKINGWITHLAYOUTSBORDERLAYOUTSTask2() {
+    public t2() {
         frame.setSize(600, 400);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(new BorderLayout());
