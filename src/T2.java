@@ -1,4 +1,8 @@
-import java.awt.BorderLayout; import java.awt.GridLayout; import javax.swing.*;
+import java.awt.BorderLayout;
+import java.awt.GridLayout;
+import javax.swing.*;
+
+import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 
 public class T2 {
 
@@ -6,7 +10,7 @@ public class T2 {
 
     public T2() {
         frame.setSize(600, 400);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
         frame.setLayout(new BorderLayout());
         frame.add(new JLabel("application title"), BorderLayout.NORTH);
         frame.add(panel_west(), BorderLayout.WEST);
@@ -15,7 +19,7 @@ public class T2 {
         frame.setVisible(true);
     }
 
-    JPanel panel_west() {
+     private JPanel panel_west() {
         JPanel panel = new JPanel(new GridLayout(3, 1));
         panel.add(new JButton("option 1"));
         panel.add(new JButton("option 2"));
@@ -24,10 +28,11 @@ public class T2 {
         return panel;
     }
 
-    JScrollPane center_text() {
+     public JScrollPane center_text() {
         JTextArea text = new JTextArea(20, 40);
         text.setLineWrap(true);
-        JScrollPane scrollPane = new JScrollPane(text);
-        return scrollPane;
+        JScrollPane scrollPane;
+         scrollPane = new JScrollPane(text);
+         return scrollPane;
     }
 }
