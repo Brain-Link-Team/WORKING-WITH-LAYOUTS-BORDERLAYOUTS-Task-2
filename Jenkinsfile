@@ -3,13 +3,18 @@ pipeline {
     tools { maven 'Maven-3.9'; jdk 'JDK-17' }
     stages {
         stage('Compile') {
-            steps { sh 'mvn clean compile -B' }
+            steps { bat 'mvn clean compile -B' }
         }
         stage('Test') {
-            steps { sh 'mvn test -B' }
+            steps { bat 'mvn test -B' }
         }
         stage('Package') {
-            steps { sh 'mvn package -DskipTests -B' }
+            steps { bat 'mvn package -DskipTests -B' }
+        }
+    }
+    post {
+        always {
+            junit '**/target/surefire-reports/*.xml'
         }
     }
 }
